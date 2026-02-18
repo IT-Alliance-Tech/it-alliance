@@ -43,25 +43,27 @@ export default function AIEnhanced() {
                 continuously learning from your enterprise data.
             </SectionDescription>
 
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <StaggerContainer className="space-y-0">
                 {systems.map((system, i) => (
                     <StaggerItem key={i}>
                         <motion.div
-                            whileHover={{ y: -5 }}
+                            whileHover={{ x: 6 }}
                             transition={{ duration: 0.3 }}
-                            className="glass rounded-2xl p-7 gradient-border h-full group hover:shadow-card-hover transition-all duration-500"
+                            className="group py-8 flex items-start gap-6 border-b border-slate-100 dark:border-white/[0.04] last:border-0"
                         >
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-electric/15 to-violet/15 flex items-center justify-center mb-5 border border-white/5 group-hover:shadow-glow-sm transition-all duration-500">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-electric/10 to-violet/10 dark:from-electric/15 dark:to-violet/15 flex items-center justify-center shrink-0 mt-0.5">
                                 <span className="text-[12px] font-bold text-gradient tracking-wide">
                                     {String(i + 1).padStart(2, "0")}
                                 </span>
                             </div>
-                            <h3 className="text-lg font-semibold text-white mb-3 tracking-tight">
-                                {system.title}
-                            </h3>
-                            <p className="text-[14px] text-navy-200 leading-[1.75]">
-                                {system.desc}
-                            </p>
+                            <div>
+                                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-electric transition-colors duration-300">
+                                    {system.title}
+                                </h3>
+                                <p className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.75] max-w-xl">
+                                    {system.desc}
+                                </p>
+                            </div>
                         </motion.div>
                     </StaggerItem>
                 ))}

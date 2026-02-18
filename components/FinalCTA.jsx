@@ -6,19 +6,19 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function FinalCTA() {
     return (
-        <section id="cta" className="relative py-28 md:py-40 overflow-hidden bg-cta-gradient">
+        <section id="cta" className="relative py-28 md:py-40 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:bg-cta-gradient">
             {/* Animated background glow */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-noise opacity-40" />
+                <div className="absolute inset-0 bg-noise opacity-20 dark:opacity-40" />
                 <motion.div
                     animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-electric/15 blur-[120px]"
+                    className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-200/30 dark:bg-electric/15 blur-[120px]"
                 />
                 <motion.div
                     animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute top-1/2 right-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet/10 blur-[100px]"
+                    className="absolute top-1/2 right-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet-200/20 dark:bg-violet/10 blur-[100px]"
                 />
             </div>
 
@@ -32,13 +32,13 @@ export default function FinalCTA() {
                             </span>
                         </div>
 
-                        <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-bold text-white leading-[1.08] tracking-[-0.03em] mb-7">
+                        <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-bold text-slate-900 dark:text-white leading-[1.08] tracking-[-0.03em] mb-7">
                             Ready to Build Your
                             <br />
                             <span className="text-gradient">AI Revenue Architecture?</span>
                         </h2>
 
-                        <p className="text-[17px] text-navy-200 leading-[1.8] mb-12">
+                        <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-12">
                             Schedule a confidential executive briefing with our architecture
                             team. No pitch decks. No demos. Just a strategic conversation
                             about your revenue future.
@@ -58,13 +58,13 @@ export default function FinalCTA() {
                             </motion.a>
                             <a
                                 href="mailto:strategy@itallianceai.com"
-                                className="inline-flex items-center gap-2.5 border border-white/10 text-white/70 font-medium px-10 py-4 rounded-xl hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300 text-[15px]"
+                                className="inline-flex items-center gap-2.5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white/70 font-medium px-10 py-4 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 hover:border-slate-300 dark:hover:border-white/20 hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-[15px]"
                             >
                                 strategy@itallianceai.com
                             </a>
                         </div>
 
-                        <p className="text-[11px] text-navy-400 mt-10 tracking-wide">
+                        <p className="text-[11px] text-slate-400 dark:text-navy-400 mt-10 tracking-wide">
                             Enterprise inquiries only · NDA-protected · C-suite direct access
                         </p>
                     </div>

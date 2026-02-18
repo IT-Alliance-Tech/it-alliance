@@ -28,22 +28,20 @@ export default function Industries() {
                 and scale are non-negotiable.
             </SectionDescription>
 
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4">
                 {industries.map((industry, i) => (
                     <StaggerItem key={i}>
                         <motion.div
-                            whileHover={{ y: -3, scale: 1.02 }}
+                            whileHover={{ x: 4 }}
                             transition={{ duration: 0.3 }}
-                            className="glass rounded-2xl px-6 py-6 gradient-border group cursor-default hover:shadow-glow-sm transition-all duration-500"
+                            className="group flex items-center gap-4 px-5 py-5 border-b border-r border-slate-100 dark:border-white/[0.04] cursor-default"
                         >
-                            <div className="flex items-center gap-4">
-                                <span className="text-xl group-hover:scale-110 transition-transform duration-300">
-                                    {industry.icon}
-                                </span>
-                                <span className="text-[14px] font-medium text-white/90">
-                                    {industry.name}
-                                </span>
-                            </div>
+                            <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                                {industry.icon}
+                            </span>
+                            <span className="text-[14px] font-medium text-slate-700 dark:text-white/90 group-hover:text-electric transition-colors duration-300">
+                                {industry.name}
+                            </span>
                         </motion.div>
                     </StaggerItem>
                 ))}

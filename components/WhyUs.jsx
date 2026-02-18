@@ -56,17 +56,17 @@ export default function WhyUs() {
                         <motion.div
                             whileHover={{ y: -4 }}
                             transition={{ duration: 0.3 }}
-                            className="glass rounded-2xl p-7 gradient-border h-full group hover:shadow-card-hover transition-all duration-500"
+                            className="glass rounded-2xl p-7 h-full group transition-all duration-500"
                         >
                             <div className="flex items-center gap-3 mb-5">
                                 <span className="text-xl group-hover:scale-110 transition-transform duration-300">
                                     {diff.icon}
                                 </span>
-                                <h3 className="text-[15px] font-semibold text-white tracking-tight">
+                                <h3 className="text-[15px] font-semibold text-slate-900 dark:text-white tracking-tight">
                                     {diff.title}
                                 </h3>
                             </div>
-                            <p className="text-[14px] text-navy-200 leading-[1.75]">
+                            <p className="text-[14px] text-slate-500 dark:text-navy-200 leading-[1.75]">
                                 {diff.desc}
                             </p>
                         </motion.div>

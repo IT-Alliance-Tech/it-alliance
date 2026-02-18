@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 
 const navLinks = [
     { label: "Problem", href: "#problem" },
@@ -15,12 +16,23 @@ const navLinks = [
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 40);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const toggleTheme = () => {
+        const html = document.documentElement;
+        if (isDark) {
+            html.classList.remove("dark");
+        } else {
+            html.classList.add("dark");
+        }
+        setIsDark(!isDark);
+    };
 
     return (
         <>
@@ -29,8 +41,8 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                        ? "glass shadow-lg shadow-black/10"
-                        : "bg-transparent"
+                    ? "glass shadow-lg shadow-black/5 dark:shadow-black/10"
+                    : "bg-transparent"
                     }`}
             >
                 <div className="max-w-[1280px] mx-auto px-6 sm:px-8 flex items-center justify-between h-[76px]">
@@ -41,7 +53,7 @@ export default function Navbar() {
                         <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-electric to-violet flex items-center justify-center text-white text-xs font-bold tracking-wider shadow-glow-sm group-hover:shadow-glow-md transition-shadow duration-500">
                             AI
                         </span>
-                        <span className="text-white">
+                        <span className="text-slate-900 dark:text-white">
                             IT <span className="text-gradient">Alliance</span>
                         </span>
                     </a>
@@ -51,12 +63,21 @@ export default function Navbar() {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="text-[13px] text-navy-200 hover:text-white transition-colors duration-300 font-medium tracking-wide relative group"
+                                className="text-[13px] text-slate-500 dark:text-navy-200 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 font-medium tracking-wide relative group"
                             >
                                 {link.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-electric to-violet group-hover:w-full transition-all duration-300" />
                             </a>
                         ))}
+
+                        <button
+                            onClick={toggleTheme}
+                            className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 dark:text-navy-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-all duration-300"
+                            aria-label="Toggle theme"
+                        >
+                            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                        </button>
+
                         <a
                             href="#cta"
                             className="relative bg-gradient-to-r from-electric to-violet text-white text-[13px] font-semibold px-6 py-2.5 rounded-lg hover:shadow-glow-md transition-all duration-500 tracking-wide overflow-hidden group"
@@ -66,28 +87,37 @@ export default function Navbar() {
                         </a>
                     </div>
 
-                    <button
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                        className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
-                        aria-label="Toggle menu"
-                    >
-                        <motion.span
-                            animate={
-                                mobileOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }
-                            }
-                            className="w-5 h-[1.5px] bg-white block"
-                        />
-                        <motion.span
-                            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-                            className="w-5 h-[1.5px] bg-white block"
-                        />
-                        <motion.span
-                            animate={
-                                mobileOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }
-                            }
-                            className="w-5 h-[1.5px] bg-white block"
-                        />
-                    </button>
+                    <div className="flex md:hidden items-center gap-3">
+                        <button
+                            onClick={toggleTheme}
+                            className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 dark:text-navy-200"
+                            aria-label="Toggle theme"
+                        >
+                            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                        </button>
+                        <button
+                            onClick={() => setMobileOpen(!mobileOpen)}
+                            className="relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+                            aria-label="Toggle menu"
+                        >
+                            <motion.span
+                                animate={
+                                    mobileOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }
+                                }
+                                className="w-5 h-[1.5px] bg-slate-700 dark:bg-white block"
+                            />
+                            <motion.span
+                                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                                className="w-5 h-[1.5px] bg-slate-700 dark:bg-white block"
+                            />
+                            <motion.span
+                                animate={
+                                    mobileOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }
+                                }
+                                className="w-5 h-[1.5px] bg-slate-700 dark:bg-white block"
+                            />
+                        </button>
+                    </div>
                 </div>
             </motion.nav>
 
@@ -106,7 +136,7 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="text-lg text-white font-medium hover:text-electric transition-colors"
+                                    className="text-lg text-slate-700 dark:text-white font-medium hover:text-electric transition-colors"
                                 >
                                     {link.label}
                                 </a>

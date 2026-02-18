@@ -20,7 +20,7 @@ export default function Trust() {
                     <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-electric/60 mb-5 block">
                         Trusted By Industry Leaders
                     </span>
-                    <h2 className="text-[32px] sm:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em]">
+                    <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-[-0.02em]">
                         Enterprise-Grade <span className="text-gradient">Trust</span>
                     </h2>
                 </div>
@@ -51,10 +51,10 @@ export default function Trust() {
                                 },
                             },
                         }}
-                        whileHover={{ y: -3, scale: 1.03 }}
-                        className="flex items-center justify-center h-[76px] glass rounded-2xl gradient-border group cursor-default hover:shadow-glow-sm transition-all duration-500"
+                        whileHover={{ y: -3 }}
+                        className="flex items-center justify-center h-[76px] rounded-2xl border border-slate-150 dark:border-white/[0.04] bg-white/50 dark:bg-white/[0.02] group cursor-default transition-all duration-500"
                     >
-                        <span className="text-[10px] font-semibold text-navy-300 group-hover:text-electric transition-colors duration-500 tracking-[0.1em] uppercase">
+                        <span className="text-[10px] font-semibold text-slate-400 dark:text-navy-300 group-hover:text-electric transition-colors duration-500 tracking-[0.1em] uppercase">
                             {logo}
                         </span>
                     </motion.div>
@@ -65,7 +65,7 @@ export default function Trust() {
                 <div className="mt-16 text-center">
                     <div className="inline-flex items-center gap-3 glass-light rounded-full px-6 py-3">
                         <span className="w-2 h-2 rounded-full bg-emerald animate-pulse" />
-                        <p className="text-[13px] text-navy-200">
+                        <p className="text-[13px] text-slate-500 dark:text-navy-200">
                             SOC 2 Type II compliant · GDPR ready · Enterprise security standards
                         </p>
                     </div>

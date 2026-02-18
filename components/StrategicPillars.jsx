@@ -16,42 +16,36 @@ const pillars = [
         icon: Brain,
         title: "AI-First Strategy Design",
         desc: "We don't retrofit AI into old processes. We redesign your operational model with AI as the foundational intelligence layer.",
-        gradient: "from-electric/20 to-blue-400/20",
         iconColor: "text-electric",
     },
     {
         icon: BarChart3,
         title: "Revenue Intelligence Engineering",
         desc: "Predictive pipeline models, AI-optimized pricing, intelligent lead scoring, and conversion architecture — built to self-optimize.",
-        gradient: "from-violet/20 to-purple-400/20",
         iconColor: "text-violet",
     },
     {
         icon: Zap,
         title: "Autonomous Process Architecture",
         desc: "Workflow automation that doesn't just execute — it learns, adapts, and improves. From onboarding to fulfillment.",
-        gradient: "from-amber-500/20 to-orange-400/20",
         iconColor: "text-amber-400",
     },
     {
         icon: Shield,
         title: "Enterprise Data Architecture",
         desc: "Your AI is only as strong as your data. We architect unified, governed, and AI-ready data infrastructure.",
-        gradient: "from-emerald/20 to-green-400/20",
         iconColor: "text-emerald",
     },
     {
         icon: Target,
         title: "Precision Customer Intelligence",
         desc: "Hyper-personalized customer journeys powered by real-time AI — from first touch through lifetime retention.",
-        gradient: "from-cyan/20 to-teal-400/20",
         iconColor: "text-cyan",
     },
     {
         icon: Workflow,
         title: "Scalable AI Operations",
         desc: "Production-grade MLOps, model governance, and continuous learning systems — built for enterprise compliance and scale.",
-        gradient: "from-rose-500/20 to-pink-400/20",
         iconColor: "text-rose-400",
     },
 ];
@@ -69,23 +63,25 @@ export default function StrategicPillars() {
                 independently or as part of a unified AI-native enterprise system.
             </SectionDescription>
 
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-0">
                 {pillars.map((pillar, i) => {
                     const Icon = pillar.icon;
                     return (
                         <StaggerItem key={i}>
                             <motion.div
-                                whileHover={{ y: -6, scale: 1.01 }}
-                                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                                className="glass rounded-2xl p-7 gradient-border h-full group hover:shadow-card-hover transition-all duration-500"
+                                whileHover={{ x: 4 }}
+                                transition={{ duration: 0.3 }}
+                                className="group py-8 border-b border-slate-100 dark:border-white/[0.04]"
                             >
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center mb-6 border border-white/5 group-hover:scale-110 transition-transform duration-500`}>
-                                    <Icon className={`w-5 h-5 ${pillar.iconColor}`} />
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/[0.04] flex items-center justify-center">
+                                        <Icon className={`w-5 h-5 ${pillar.iconColor}`} />
+                                    </div>
+                                    <h3 className="text-[16px] font-semibold text-slate-900 dark:text-white tracking-tight">
+                                        {pillar.title}
+                                    </h3>
                                 </div>
-                                <h3 className="text-lg font-semibold text-white mb-3 tracking-tight">
-                                    {pillar.title}
-                                </h3>
-                                <p className="text-[14px] text-navy-200 leading-[1.75]">
+                                <p className="text-[14px] text-slate-500 dark:text-navy-200 leading-[1.75] pl-14">
                                     {pillar.desc}
                                 </p>
                             </motion.div>
