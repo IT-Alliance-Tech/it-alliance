@@ -64,7 +64,7 @@ export default function RevenueArchitecture() {
                             }}
                             className="relative sm:pl-28 group"
                         >
-                            <div className="hidden sm:flex absolute left-0 top-8 w-16 md:w-20 h-16 md:h-20 rounded-2xl glass items-center justify-center group-hover:shadow-glow-sm transition-all duration-500">
+                            <div className="hidden sm:flex absolute left-0 top-8 w-16 md:w-20 h-16 md:h-20 rounded-2xl bg-white/80 dark:bg-white/[0.02] border border-slate-150 dark:border-white/[0.04] items-center justify-center backdrop-blur-sm transition-all duration-500">
                                 <span className={`text-sm font-bold bg-gradient-to-br ${step.color} bg-clip-text text-transparent`}>
                                     {step.phase}
                                 </span>
@@ -73,15 +73,15 @@ export default function RevenueArchitecture() {
                             <motion.div
                                 whileHover={{ y: -3 }}
                                 transition={{ duration: 0.3 }}
-                                className="glass rounded-2xl p-7 md:p-9 gradient-border hover:shadow-card-hover transition-all duration-500"
+                                className="rounded-2xl p-7 md:p-9 border border-slate-150 dark:border-white/[0.04] bg-white/50 dark:bg-white/[0.02] hover:shadow-md dark:hover:shadow-none transition-all duration-500"
                             >
                                 <span className="text-[11px] font-semibold text-electric/40 uppercase tracking-[0.12em] sm:hidden mb-2 block">
                                     Phase {step.phase}
                                 </span>
-                                <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3 tracking-tight">
                                     {step.title}
                                 </h3>
-                                <p className="text-[15px] text-navy-200 leading-[1.75]">
+                                <p className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.75]">
                                     {step.desc}
                                 </p>
                             </motion.div>

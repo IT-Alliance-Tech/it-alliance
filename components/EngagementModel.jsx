@@ -86,23 +86,23 @@ export default function EngagementModel() {
                             }}
                             className={`h-1 bg-gradient-to-r ${phase.color} rounded-t-2xl origin-left mb-0`}
                         />
-                        <div className="glass rounded-b-2xl rounded-tr-2xl p-7 md:p-9 border-t-0 hover:shadow-card-hover transition-all duration-500 h-full">
+                        <div className="glass rounded-b-2xl rounded-tr-2xl p-7 md:p-9 border-t-0 transition-all duration-500 h-full">
                             <div className="flex items-center justify-between mb-6">
                                 <span className={`text-[11px] font-bold uppercase tracking-[0.15em] bg-gradient-to-r ${phase.color} bg-clip-text text-transparent`}>
                                     {phase.phase}
                                 </span>
-                                <span className="text-[11px] text-navy-300 font-medium tracking-wide">
+                                <span className="text-[11px] text-slate-400 dark:text-navy-300 font-medium tracking-wide">
                                     {phase.timeline}
                                 </span>
                             </div>
-                            <h3 className="text-xl font-semibold text-white mb-6 tracking-tight">
+                            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6 tracking-tight">
                                 {phase.title}
                             </h3>
                             <ul className="space-y-3.5">
                                 {phase.items.map((item, j) => (
                                     <li key={j} className="flex items-start gap-3 text-[14px]">
                                         <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${phase.color} mt-1.5 shrink-0`} />
-                                        <span className="text-navy-200">{item}</span>
+                                        <span className="text-slate-500 dark:text-navy-200">{item}</span>
                                     </li>
                                 ))}
                             </ul>

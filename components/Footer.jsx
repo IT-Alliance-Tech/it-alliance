@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
     return (
-        <footer className="relative bg-navy-950 text-white py-20 overflow-hidden">
-            <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
+        <footer className="relative bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white py-20 overflow-hidden">
+            <div className="absolute inset-0 bg-noise opacity-15 dark:opacity-30 pointer-events-none" />
             <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
                     <div className="md:col-span-2">
@@ -17,7 +17,7 @@ export default function Footer() {
                                 IT <span className="text-gradient">Alliance</span> AI
                             </span>
                         </div>
-                        <p className="text-navy-200 text-[14px] leading-[1.75] max-w-sm">
+                        <p className="text-slate-500 dark:text-navy-200 text-[14px] leading-[1.75] max-w-sm">
                             Enterprise AI architecture and revenue engineering for
                             organizations ready to lead with intelligence.
                         </p>
@@ -37,7 +37,7 @@ export default function Footer() {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    className="text-[14px] text-navy-200 hover:text-electric transition-colors duration-300"
+                                    className="text-[14px] text-slate-500 dark:text-navy-200 hover:text-electric transition-colors duration-300"
                                 >
                                     {link.label}
                                 </a>
@@ -52,11 +52,11 @@ export default function Footer() {
                         <div className="flex flex-col gap-3">
                             <a
                                 href="mailto:strategy@itallianceai.com"
-                                className="text-[14px] text-navy-200 hover:text-electric transition-colors duration-300"
+                                className="text-[14px] text-slate-500 dark:text-navy-200 hover:text-electric transition-colors duration-300"
                             >
                                 strategy@itallianceai.com
                             </a>
-                            <span className="text-[14px] text-navy-300">
+                            <span className="text-[14px] text-slate-400 dark:text-navy-300">
                                 Enterprise Inquiries Only
                             </span>
                         </div>
@@ -68,24 +68,24 @@ export default function Footer() {
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="h-px bg-gradient-to-r from-transparent via-electric/20 to-transparent my-12 origin-left"
+                    className="divider-thin my-12 origin-left"
                 />
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-[11px] text-navy-400 tracking-wide">
+                    <p className="text-[11px] text-slate-400 dark:text-navy-400 tracking-wide">
                         &copy; {new Date().getFullYear()} IT Alliance AI. All rights
                         reserved.
                     </p>
                     <div className="flex gap-7">
                         <a
                             href="#"
-                            className="text-[11px] text-navy-400 hover:text-electric transition-colors tracking-wide"
+                            className="text-[11px] text-slate-400 dark:text-navy-400 hover:text-electric transition-colors tracking-wide"
                         >
                             Privacy Policy
                         </a>
                         <a
                             href="#"
-                            className="text-[11px] text-navy-400 hover:text-electric transition-colors tracking-wide"
+                            className="text-[11px] text-slate-400 dark:text-navy-400 hover:text-electric transition-colors tracking-wide"
                         >
                             Terms of Service
                         </a>

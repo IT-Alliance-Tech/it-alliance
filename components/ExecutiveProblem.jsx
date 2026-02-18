@@ -23,12 +23,12 @@ export default function ExecutiveProblem() {
 
             <FadeInView delay={0.2}>
                 <div className="max-w-3xl">
-                    <p className="text-[17px] text-navy-200 leading-[1.8] mb-5">
+                    <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-5">
                         The AI market is saturated with tools, pilots, and proofs-of-concept
                         — yet 87% of enterprise AI projects fail to reach production. The
                         gap isn&apos;t technology. It&apos;s architecture.
                     </p>
-                    <p className="text-[17px] text-navy-200 leading-[1.8] mb-14">
+                    <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-14">
                         Without a revenue-aligned AI architecture, organizations accumulate
                         AI cost without capturing AI value. Departments run disconnected
                         experiments. Leadership sees dashboards, not decisions.
@@ -44,13 +44,13 @@ export default function ExecutiveProblem() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
-                        whileHover={{ y: -4, scale: 1.02 }}
-                        className="glass rounded-2xl p-8 gradient-border group cursor-default"
+                        whileHover={{ y: -4 }}
+                        className="rounded-2xl p-8 border border-slate-150 dark:border-white/[0.04] bg-white/50 dark:bg-white/[0.02] group cursor-default"
                     >
                         <div className="text-[36px] font-bold text-gradient mb-3 tracking-tight">
                             {item.stat}
                         </div>
-                        <p className="text-[14px] text-navy-200 leading-relaxed">
+                        <p className="text-[14px] text-slate-500 dark:text-navy-200 leading-relaxed">
                             {item.desc}
                         </p>
                     </motion.div>

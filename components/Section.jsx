@@ -10,17 +10,17 @@ export default function Section({
 }) {
     const bgClass =
         background === "darker"
-            ? "bg-navy-950"
+            ? "bg-slate-100 dark:bg-navy-950"
             : background === "gradient"
-                ? "bg-hero-gradient"
-                : "bg-navy-800";
+                ? "bg-gradient-to-br from-slate-50 to-blue-50 dark:bg-hero-gradient"
+                : "bg-white dark:bg-navy-800";
 
     return (
         <section
             id={id}
             className={`relative py-24 md:py-32 lg:py-40 ${bgClass} overflow-hidden ${className}`}
         >
-            <div className="absolute inset-0 bg-noise pointer-events-none opacity-50" />
+            <div className="absolute inset-0 bg-noise pointer-events-none opacity-20 dark:opacity-50" />
             <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
                 {children}
             </div>
@@ -54,7 +54,7 @@ export function SectionTitle({ children, className = "" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className={`text-[32px] sm:text-[40px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-[-0.02em] mb-6 ${className}`}
+            className={`text-[32px] sm:text-[40px] lg:text-[52px] font-bold text-slate-900 dark:text-white leading-[1.08] tracking-[-0.02em] mb-6 ${className}`}
         >
             {children}
         </motion.h2>
@@ -68,7 +68,7 @@ export function SectionDescription({ children }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-[17px] text-navy-200 leading-[1.8] max-w-2xl mb-16"
+            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-2xl mb-16"
         >
             {children}
         </motion.p>
