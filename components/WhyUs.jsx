@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Award } from "lucide-react";
 
 const differentiators = [
   {
@@ -52,10 +53,8 @@ function Card({ diff, index }) {
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.09, ease: [0.22, 1, 0.36, 1] }}
-      className="relative group rounded-2xl overflow-hidden flex flex-col"
+      className="relative group rounded-2xl overflow-hidden flex flex-col bg-white dark:bg-transparent border border-slate-200 dark:border-white/[0.07] shadow-sm dark:shadow-none"
       style={{
-        background: "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-        border: "1px solid rgba(255,255,255,0.07)",
         minHeight: "220px",
       }}
     >
@@ -67,9 +66,8 @@ function Card({ diff, index }) {
 
       {/* Watermark number */}
       <span
-        className="absolute bottom-2 right-4 text-[90px] font-black leading-none select-none pointer-events-none tabular-nums"
+        className="absolute bottom-2 right-4 text-[90px] font-black leading-none select-none pointer-events-none tabular-nums text-slate-900/[0.04] dark:text-white/[0.03]"
         style={{
-          color: "rgba(255,255,255,0.03)",
           fontFamily: "'DM Serif Display', Georgia, serif",
           lineHeight: 1,
         }}
@@ -101,10 +99,9 @@ function Card({ diff, index }) {
 
         {/* Title */}
         <h3
-          className="text-[18px] font-bold leading-tight"
+          className="text-[18px] font-bold leading-tight text-slate-900 dark:text-[#f0f0f5]"
           style={{
             fontFamily: "'DM Serif Display', Georgia, serif",
-            color: "#f0f0f5",
             letterSpacing: "-0.01em",
           }}
         >
@@ -119,8 +116,7 @@ function Card({ diff, index }) {
 
         {/* Description */}
         <p
-          className="text-[13.5px] leading-[1.8] flex-1"
-          style={{ color: "rgba(255,255,255,0.38)" }}
+          className="text-[13.5px] leading-[1.8] flex-1 text-slate-500 dark:text-white/[0.38]"
         >
           {diff.desc}
         </p>
@@ -142,12 +138,11 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative py-28 px-4 sm:px-8"
-      style={{ background: "#08080e" }}
+      className="relative py-28 px-4 sm:px-8 bg-[#F8FAFC] dark:bg-[#08080e]"
     >
-      {/* Soft radial background */}
+      {/* Soft radial background — dark mode only */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden dark:block"
         style={{
           background:
             "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 70%)",
@@ -163,10 +158,11 @@ export default function WhyUs() {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 mb-5"
         >
-          <div className="w-6 h-px" style={{ background: "#3B82F6" }} />
+          <div className="w-10 h-10 rounded-xl bg-blue-500/10 dark:bg-electric/10 flex items-center justify-center border border-blue-500/10 dark:border-electric/10">
+            <Award className="w-5 h-5 text-blue-500 dark:text-electric" />
+          </div>
           <span
-            className="text-[10.5px] font-bold uppercase tracking-[0.24em]"
-            style={{ color: "#3B82F6" }}
+            className="text-[10.5px] font-bold uppercase tracking-[0.24em] text-blue-500 dark:text-[#3B82F6]"
           >
             Why IT Alliance AI
           </span>
@@ -177,11 +173,11 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-slate-900 dark:text-[#f0f0f5]"
           style={{
             fontFamily: "'DM Serif Display', Georgia, serif",
             fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
             lineHeight: 1.12,
-            color: "#f0f0f5",
             letterSpacing: "-0.02em",
             marginBottom: "1rem",
           }}
@@ -202,8 +198,7 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.18 }}
-          className="mb-14 max-w-lg text-[15px] leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.36)" }}
+          className="mb-14 max-w-lg text-[15px] leading-relaxed text-slate-500 dark:text-white/[0.36]"
         >
           We are not an AI vendor. We are an AI architecture firm — dedicated to
           building intelligent revenue systems that deliver compound returns.
