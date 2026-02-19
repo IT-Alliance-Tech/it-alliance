@@ -14,7 +14,7 @@ export default function FinalCTA() {
     return (
         <section
             id="cta"
-            className="relative py-28 md:py-44 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:bg-cta-gradient"
+            className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:bg-cta-gradient"
         >
             {/* Animated background glows */}
             <div className="absolute inset-0 pointer-events-none">
