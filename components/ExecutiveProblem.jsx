@@ -1,14 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Section, { SectionLabel, SectionTitle, FadeInView } from "./Section";
 import { AlertTriangle } from "lucide-react";
 
 const stats = [
-    { stat: "87%", desc: "of enterprise AI projects never reach production" },
-    { stat: "$4.6T", desc: "projected AI economic value by 2030 — most will miss it" },
-    { stat: "3–5x", desc: "ROI gap between AI-native and AI-experimenting enterprises" },
+    {
+        value: 87,
+        suffix: "%",
+        desc: "of enterprise AI projects never reach production",
+        isAnimated: true
+    },
+    {
+        stat: "$4.6T",
+        desc: "projected AI economic value by 2030 — most will miss it"
+    },
+    {
+        stat: "3–5x",
+        desc: "ROI gap between AI-native and AI-experimenting enterprises"
+    },
 ];
+
+function AnimatedCounter({ value, duration = 2 }) {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: "-20px" });
+    const motionValue = useMotionValue(0);
+    const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
+    const [displayValue, setDisplayValue] = useState(0);
+
+    useEffect(() => {
+        if (inView) {
+            motionValue.set(value);
+        }
+    }, [inView, value, motionValue]);
+
+    useEffect(() => {
+        return springValue.on("change", (latest) => {
+            setDisplayValue(Math.round(latest));
+        });
+    }, [springValue]);
+
+    return <span ref={ref}>{displayValue}</span>;
+}
 
 export default function ExecutiveProblem() {
     return (
@@ -47,8 +81,15 @@ export default function ExecutiveProblem() {
                         whileHover={{ y: -4 }}
                         className="rounded-2xl p-8 border border-slate-150 dark:border-white/[0.04] bg-white/50 dark:bg-white/[0.02] group cursor-default"
                     >
-                        <div className="text-[36px] font-bold text-gradient mb-3 tracking-tight">
-                            {item.stat}
+                        <div className="text-[36px] font-bold text-gradient mb-3 tracking-tight flex items-baseline">
+                            {item.isAnimated ? (
+                                <>
+                                    <AnimatedCounter value={item.value} />
+                                    <span>{item.suffix}</span>
+                                </>
+                            ) : (
+                                item.stat
+                            )}
                         </div>
                         <p className="text-[14px] text-slate-500 dark:text-navy-200 leading-relaxed">
                             {item.desc}
