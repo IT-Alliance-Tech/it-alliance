@@ -5,24 +5,24 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient">
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-100 dark:bg-hero-gradient">
             {/* Animated background effects */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-noise opacity-40" />
+                <div className="absolute inset-0 bg-noise opacity-20 dark:opacity-40" />
                 <motion.div
                     animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/4 -right-32 w-[700px] h-[700px] rounded-full bg-electric/20 blur-[150px]"
+                    className="absolute top-1/4 -right-32 w-[700px] h-[700px] rounded-full bg-blue-200/40 dark:bg-electric/20 blur-[150px]"
                 />
                 <motion.div
                     animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-violet/15 blur-[130px]"
+                    className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-violet-200/30 dark:bg-violet/15 blur-[130px]"
                 />
                 <motion.div
                     animate={{ scale: [1, 1.15, 1], opacity: [0.05, 0.1, 0.05] }}
                     transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-cyan/10 blur-[120px]"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-cyan-200/20 dark:bg-cyan/10 blur-[120px]"
                 />
 
                 {/* Grid pattern */}
@@ -58,7 +58,7 @@ export default function Hero() {
                 ))}
             </div>
 
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 w-full pt-36 pb-24 md:pt-44 md:pb-36 relative z-10">
+            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <motion.div
@@ -77,7 +77,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="text-[42px] sm:text-[56px] lg:text-[68px] font-bold text-white leading-[1.05] tracking-[-0.03em] mb-7"
+                            className="text-[42px] sm:text-[56px] lg:text-[68px] font-bold text-slate-900 dark:text-white leading-[1.05] tracking-[-0.03em] mb-7"
                         >
                             We Don&apos;t Sell AI.
                             <br />
@@ -90,7 +90,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="text-[17px] text-navy-200 leading-[1.8] max-w-lg mb-12"
+                            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-lg mb-12"
                         >
                             IT Alliance AI builds AI-native revenue architectures that
                             transform how enterprises acquire, convert, and retain — at scale,
@@ -113,7 +113,7 @@ export default function Hero() {
                             </a>
                             <a
                                 href="#architecture"
-                                className="inline-flex items-center justify-center gap-2.5 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/5 hover:border-white/20 transition-all duration-300 text-[15px]"
+                                className="inline-flex items-center justify-center gap-2.5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white font-semibold px-8 py-4 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 hover:border-slate-300 dark:hover:border-white/20 transition-all duration-300 text-[15px]"
                             >
                                 View Architecture
                             </a>
@@ -160,7 +160,7 @@ export default function Hero() {
                                 <motion.div
                                     animate={{ scale: [1, 1.06, 1] }}
                                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                    className="w-24 h-24 rounded-2xl bg-gradient-to-br from-electric/20 to-violet/20 border border-white/10 flex items-center justify-center shadow-glow-md backdrop-blur-sm"
+                                    className="w-24 h-24 rounded-2xl bg-gradient-to-br from-electric/20 to-violet/20 border border-slate-200/50 dark:border-white/10 flex items-center justify-center shadow-glow-md backdrop-blur-sm"
                                 >
                                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-electric to-violet shadow-glow-sm" />
                                 </motion.div>
