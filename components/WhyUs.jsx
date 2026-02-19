@@ -1,78 +1,226 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Section, { SectionLabel, SectionTitle, SectionDescription, StaggerContainer, StaggerItem } from "./Section";
-import { CheckCircle2 } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const differentiators = [
-    {
-        title: "Architecture-First",
-        desc: "We design before we deploy. Every AI system is built on a strategic architecture aligned to your revenue model.",
-        icon: "🏗️",
-    },
-    {
-        title: "Revenue-Aligned",
-        desc: "Every engagement is measured by business outcomes — not model accuracy scores. Revenue impact is the only metric.",
-        icon: "📈",
-    },
-    {
-        title: "Enterprise-Native",
-        desc: "Built for compliance, governance, and scale from day one. No startup experiments retrofitted for enterprise.",
-        icon: "🏢",
-    },
-    {
-        title: "Full-Stack AI",
-        desc: "From strategy through deployment through optimization. One partner. One architecture. One accountable team.",
-        icon: "⚙️",
-    },
-    {
-        title: "Continuous Learning",
-        desc: "Our systems don't just automate — they learn. Every data point makes your AI infrastructure smarter.",
-        icon: "🧠",
-    },
-    {
-        title: "Knowledge Transfer",
-        desc: "We build your team's AI capabilities alongside the systems. You own the intelligence we create.",
-        icon: "🎓",
-    },
+  {
+    title: "Architecture-First",
+    desc: "We design before we deploy. Every AI system is built on a strategic architecture aligned to your revenue model.",
+    icon: "🏗️",
+    accent: "#3B82F6",
+  },
+  {
+    title: "Revenue-Aligned",
+    desc: "Every engagement is measured by business outcomes — not model accuracy scores. Revenue impact is the only metric.",
+    icon: "📈",
+    accent: "#8B5CF6",
+  },
+  {
+    title: "Enterprise-Native",
+    desc: "Built for compliance, governance, and scale from day one. No startup experiments retrofitted for enterprise.",
+    icon: "🏢",
+    accent: "#10B981",
+  },
+  {
+    title: "Full-Stack AI",
+    desc: "From strategy through deployment through optimization. One partner. One architecture. One accountable team.",
+    icon: "⚙️",
+    accent: "#F59E0B",
+  },
+  {
+    title: "Continuous Learning",
+    desc: "Our systems don't just automate — they learn. Every data point makes your AI infrastructure smarter.",
+    icon: "🧠",
+    accent: "#EF4444",
+  },
+  {
+    title: "Knowledge Transfer",
+    desc: "We build your team's AI capabilities alongside the systems. You own the intelligence we create.",
+    icon: "🎓",
+    accent: "#06B6D4",
+  },
 ];
 
-export default function WhyUs() {
-    return (
-        <Section id="why-us" background="darker">
-            <SectionLabel icon={CheckCircle2} text="Why IT Alliance AI" />
-            <SectionTitle>
-                The Difference Is{" "}
-                <span className="text-gradient">Architecture</span>
-            </SectionTitle>
-            <SectionDescription>
-                We are not an AI vendor. We are an AI architecture firm — dedicated to
-                building intelligent revenue systems that deliver compound returns.
-            </SectionDescription>
+function Card({ diff, index }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
 
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {differentiators.map((diff, i) => (
-                    <StaggerItem key={i}>
-                        <motion.div
-                            whileHover={{ y: -4 }}
-                            transition={{ duration: 0.3 }}
-                            className="glass rounded-2xl p-7 h-full group transition-all duration-500"
-                        >
-                            <div className="flex items-center gap-3 mb-5">
-                                <span className="text-xl group-hover:scale-110 transition-transform duration-300">
-                                    {diff.icon}
-                                </span>
-                                <h3 className="text-[15px] font-semibold text-slate-900 dark:text-white tracking-tight">
-                                    {diff.title}
-                                </h3>
-                            </div>
-                            <p className="text-[14px] text-slate-500 dark:text-navy-200 leading-[1.75]">
-                                {diff.desc}
-                            </p>
-                        </motion.div>
-                    </StaggerItem>
-                ))}
-            </StaggerContainer>
-        </Section>
-    );
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.55, delay: index * 0.09, ease: [0.22, 1, 0.36, 1] }}
+      className="relative group rounded-2xl overflow-hidden flex flex-col"
+      style={{
+        background: "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
+        border: "1px solid rgba(255,255,255,0.07)",
+        minHeight: "220px",
+      }}
+    >
+      {/* Hover glow */}
+      <div
+        className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+        style={{ background: diff.accent }}
+      />
+
+      {/* Watermark number */}
+      <span
+        className="absolute bottom-2 right-4 text-[90px] font-black leading-none select-none pointer-events-none tabular-nums"
+        style={{
+          color: "rgba(255,255,255,0.03)",
+          fontFamily: "'DM Serif Display', Georgia, serif",
+          lineHeight: 1,
+        }}
+        aria-hidden
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <div className="relative z-10 p-7 flex flex-col gap-4 flex-1">
+        {/* Top row: icon + pill */}
+        <div className="flex items-center justify-between">
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+            style={{ background: `${diff.accent}18`, border: `1px solid ${diff.accent}30` }}
+          >
+            {diff.icon}
+          </div>
+          <span
+            className="text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full"
+            style={{
+              background: `${diff.accent}15`,
+              color: diff.accent,
+              border: `1px solid ${diff.accent}35`,
+            }}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3
+          className="text-[18px] font-bold leading-tight"
+          style={{
+            fontFamily: "'DM Serif Display', Georgia, serif",
+            color: "#f0f0f5",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          {diff.title}
+        </h3>
+
+        {/* Animated divider */}
+        <div
+          className="w-8 h-px rounded-full transition-all duration-500 group-hover:w-16"
+          style={{ background: `linear-gradient(90deg, ${diff.accent}, transparent)` }}
+        />
+
+        {/* Description */}
+        <p
+          className="text-[13.5px] leading-[1.8] flex-1"
+          style={{ color: "rgba(255,255,255,0.38)" }}
+        >
+          {diff.desc}
+        </p>
+      </div>
+
+      {/* Bottom accent bar on hover */}
+      <div
+        className="h-px w-0 group-hover:w-[calc(100%-3.5rem)] transition-all duration-500 ease-out mx-7 mb-5 rounded-full"
+        style={{ background: `linear-gradient(90deg, ${diff.accent}80, transparent)` }}
+      />
+    </motion.div>
+  );
+}
+
+export default function WhyUs() {
+  const headRef = useRef(null);
+  const inView = useInView(headRef, { once: true });
+
+  return (
+    <section
+      id="why-us"
+      className="relative py-28 px-4 sm:px-8"
+      style={{ background: "#08080e" }}
+    >
+      {/* Soft radial background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Label */}
+        <motion.div
+          ref={headRef}
+          initial={{ opacity: 0, y: 14 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-3 mb-5"
+        >
+          <div className="w-6 h-px" style={{ background: "#3B82F6" }} />
+          <span
+            className="text-[10.5px] font-bold uppercase tracking-[0.24em]"
+            style={{ color: "#3B82F6" }}
+          >
+            Why IT Alliance AI
+          </span>
+        </motion.div>
+
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          style={{
+            fontFamily: "'DM Serif Display', Georgia, serif",
+            fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
+            lineHeight: 1.12,
+            color: "#f0f0f5",
+            letterSpacing: "-0.02em",
+            marginBottom: "1rem",
+          }}
+        >
+          The Difference Is{" "}
+          <span
+            style={{
+              background: "linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Architecture
+          </span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.18 }}
+          className="mb-14 max-w-lg text-[15px] leading-relaxed"
+          style={{ color: "rgba(255,255,255,0.36)" }}
+        >
+          We are not an AI vendor. We are an AI architecture firm — dedicated to
+          building intelligent revenue systems that deliver compound returns.
+        </motion.p>
+
+        {/* Perfectly uniform 3-column grid */}
+        <div
+          className="grid gap-4"
+          style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+        >
+          {differentiators.map((diff, i) => (
+            <Card key={i} diff={diff} index={i} />
+          ))}
+        </div>
+      </div>
+
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');`}</style>
+    </section>
+  );
 }
