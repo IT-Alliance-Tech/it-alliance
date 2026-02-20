@@ -96,8 +96,8 @@ small {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.25);
-    border-radius: 3px;
+        background: rgba(59, 130, 246, 0.25);
+        border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
