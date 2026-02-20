@@ -9,7 +9,7 @@ const steps = [
         phase: "01",
         title: "Revenue Signal Mapping",
         desc: "We map your entire revenue lifecycle — from lead generation through retention — identifying where AI can create measurable leverage.",
-        color: "from-electric to-blue-400",
+         color: "from-electric to-blue-400",
     },
     {
         phase: "02",
