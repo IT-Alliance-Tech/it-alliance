@@ -1,0 +1,31 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="24" fill="white"/>
+  <rect x="0" y="0" width="200" height="200" rx="24" fill="url(#paint0_linear_re)" fill-opacity="0.05"/>
+  
+  <!-- Building -->
+  <rect x="50" y="70" width="40" height="80" rx="4" fill="#6366F1" fill-opacity="0.8"/>
+  <rect x="100" y="50" width="50" height="100" rx="4" fill="#4338CA"/>
+  
+  <!-- Windows on tall building -->
+  <rect x="115" y="65" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+  <rect x="132" y="65" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+  <rect x="115" y="85" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+  <rect x="132" y="85" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+  <rect x="115" y="105" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+  <rect x="132" y="105" width="8" height="8" rx="1" fill="white" fill-opacity="0.3"/>
+
+  <!-- Location Pin -->
+  <path d="M150 110C150 98.9543 141.046 90 130 90C118.954 90 110 98.9543 110 110C110 121.046 130 145 130 145C130 145 150 121.046 150 110Z" fill="#F43F5E"/>
+  <circle cx="130" cy="110" r="5" fill="white"/>
+
+  <!-- Tech Circles -->
+  <circle cx="60" cy="140" r="15" fill="#818CF8" fill-opacity="0.2"/>
+  <path d="M55 140L60 145L65 135" stroke="#818CF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <defs>
+    <linearGradient id="paint0_linear_re" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+  </defs>
+</svg>

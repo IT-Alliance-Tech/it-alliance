@@ -62,6 +62,19 @@ const phases = [
 export default function EngagementModel() {
     const [active, setActive] = useState(1);
     const [paused, setPaused] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    // Initial width on mount and resize listener
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const isMobile = windowWidth > 0 && windowWidth < 768;
+    const isTablet = windowWidth >= 768 && windowWidth < 1024;
+    const cardSpacing = isMobile ? windowWidth * 0.85 : isTablet ? 280 : 310;
 
     const prev = () => setActive((a) => (a - 1 + phases.length) % phases.length);
     const next = () => setActive((a) => (a + 1) % phases.length);
@@ -71,7 +84,7 @@ export default function EngagementModel() {
         if (paused) return;
         const interval = setInterval(() => {
             setActive((a) => (a + 1) % phases.length);
-        }, 2000);
+        }, 4000);
         return () => clearInterval(interval);
     }, [paused]);
 
@@ -93,18 +106,19 @@ export default function EngagementModel() {
                 {/* Prev arrow */}
                 <button
                     onClick={prev}
-                    className="relative z-20 w-10 h-10 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm flex items-center justify-center text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 hover:shadow-md transition-all duration-300 shrink-0"
+                    className="hidden md:flex relative z-20 w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm items-center justify-center text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 hover:shadow-md transition-all duration-300 shrink-0"
                 >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="w-5 h-5" />
                 </button>
 
                 {/* Cards stage */}
                 <div
-                    className="relative flex items-center justify-center w-full max-w-4xl overflow-hidden"
-                    style={{ height: "380px" }}
-                    onMouseEnter={() => setPaused(true)}
-                    onMouseLeave={() => setPaused(false)}
+                    className="relative flex items-center justify-center w-full max-w-5xl overflow-hidden px-4"
+                    style={{ height: isMobile ? "460px" : "420px" }}
+                    onMouseEnter={() => !isMobile && setPaused(true)}
+                    onMouseLeave={() => !isMobile && setPaused(false)}
                 >
+
                     {phases.map((phase, i) => {
                         const rawOffset = i - active;
                         const offset = rawOffset > 1 ? rawOffset - phases.length : rawOffset < -1 ? rawOffset + phases.length : rawOffset;
@@ -115,16 +129,28 @@ export default function EngagementModel() {
                             <motion.div
                                 key={i}
                                 onClick={() => !isActive && setActive(i)}
-                                animate={{
-                                    x: offset * 310,
-                                    scale: isActive ? 1 : 0.84,
-                                    opacity: isHidden ? 0 : isActive ? 1 : 0.4,
-                                    zIndex: isActive ? 10 : 5,
-                                    filter: isActive ? "blur(0px)" : "blur(2px)",
+                                drag={isMobile ? "x" : false}
+                                dragConstraints={{ left: 0, right: 0 }}
+                                onDragEnd={(e, { offset, velocity }) => {
+                                    const swipeThreshold = 50;
+                                    if (offset.x > swipeThreshold) prev();
+                                    else if (offset.x < -swipeThreshold) next();
                                 }}
-                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                                className="absolute w-full max-w-md cursor-pointer"
-                                style={{ pointerEvents: isHidden ? "none" : "auto" }}
+                                animate={{
+                                    x: offset * cardSpacing,
+                                    scale: isActive ? 1 : isMobile ? 0.95 : 0.88,
+                                    opacity: isMobile
+                                        ? (isActive ? 1 : 0)
+                                        : (isHidden ? 0 : isActive ? 1 : 0.1),
+                                    zIndex: isActive ? 20 : 10,
+                                    filter: isActive ? "blur(0px)" : isMobile ? "blur(0px)" : "blur(1.5px)",
+                                }}
+                                transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                                className={`absolute w-full ${isMobile ? "max-w-[calc(100vw-48px)]" : "max-w-md"} cursor-pointer select-none`}
+                                style={{
+                                    pointerEvents: isHidden && !isMobile ? "none" : "auto",
+                                    touchAction: "pan-y"
+                                }}
                             >
                                 {/* Glow — light mode uses colored shadow, dark uses blur */}
                                 {isActive && (
@@ -136,8 +162,8 @@ export default function EngagementModel() {
 
                                 <div className={`relative rounded-2xl border-2 overflow-hidden transition-all duration-500
                                     ${isActive
-                                        ? `${phase.borderColor} bg-white dark:bg-white/[0.22] shadow-xl dark:shadow-none`
-                                        : "border-slate-200 dark:border-white/[0.05] bg-slate-50/80 dark:bg-white/[0.05] shadow-md dark:shadow-none"
+                                        ? `${phase.borderColor} bg-white dark:bg-white/[0.22] shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-none`
+                                        : "border-slate-200 dark:border-white/[0.05] bg-slate-50/80 dark:bg-white/[0.08] shadow-sm dark:shadow-none"
                                     }`}
                                 >
                                     {/* Top gradient bar */}
@@ -187,20 +213,36 @@ export default function EngagementModel() {
                 {/* Next arrow */}
                 <button
                     onClick={next}
-                    className="relative z-20 w-10 h-10 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm flex items-center justify-center text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 hover:shadow-md transition-all duration-300 shrink-0"
+                    className="hidden md:flex relative z-20 w-12 h-12 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm items-center justify-center text-slate-500 dark:text-white/40 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 hover:shadow-md transition-all duration-300 shrink-0"
                 >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-5 h-5" />
+                </button>
+            </div>
+
+            {/* Mobile Navigation Arrows (Bottom Row) */}
+            <div className="md:hidden flex items-center justify-center gap-6 mt-6">
+                <button
+                    onClick={prev}
+                    className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center text-white shadow-lg active:scale-90 transition-transform"
+                >
+                    <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                    onClick={next}
+                    className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center text-white shadow-lg active:scale-90 transition-transform"
+                >
+                    <ChevronRight className="w-6 h-6" />
                 </button>
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-2.5 mt-8">
+            <div className="flex items-center justify-center gap-3 mt-10">
                 {phases.map((phase, i) => (
                     <button
                         key={i}
                         onClick={() => setActive(i)}
-                        className="relative h-1.5 rounded-full transition-all duration-300 overflow-hidden"
-                        style={{ width: active === i ? "32px" : "8px" }}
+                        className="relative h-2 md:h-1.5 rounded-full transition-all duration-300 overflow-hidden"
+                        style={{ width: active === i ? (isMobile ? "40px" : "32px") : "8px" }}
                     >
                         <div className={`absolute inset-0 rounded-full ${active === i ? `bg-gradient-to-r ${phase.color}` : "bg-slate-300 dark:bg-white/20"} transition-all duration-300`} />
                     </button>

@@ -198,16 +198,15 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.18 }}
-          className="mb-14 max-w-lg text-[15px] leading-relaxed text-slate-500 dark:text-white/[0.36]"
+          className="mb-10 md:mb-14 max-w-lg text-[15px] leading-relaxed text-slate-500 dark:text-white/[0.36]"
         >
           We are not an AI vendor. We are an AI architecture firm — dedicated to
           building intelligent revenue systems that deliver compound returns.
         </motion.p>
 
-        {/* Perfectly uniform 3-column grid */}
+        {/* Perfectly uniform responsive grid */}
         <div
-          className="grid gap-4"
-          style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
         >
           {differentiators.map((diff, i) => (
             <Card key={i} diff={diff} index={i} />
