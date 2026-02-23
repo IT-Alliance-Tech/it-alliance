@@ -20,8 +20,8 @@ html {
 
 /* ── Light mode (default) ── */
 body {
-        background: #F8FAFC;
-        color: #1E293B;
+        background: #0A0F1C;
+        color: #E8EAF0;
         font-family: var(--font-family-base, 'Poppins', Arial, Helvetica, sans-serif);
         line-height: 1.6;
         overflow-x: hidden;
@@ -83,8 +83,8 @@ small {
 }
 
 ::selection {
-    background: rgba(59, 130, 246, 0.2);
-    color: #0F172A;
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -92,38 +92,15 @@ small {
 }
 
 ::-webkit-scrollbar-track {
-    background: #F1F5F9;
+    background: #0A0F1C;
 }
 
 ::-webkit-scrollbar-thumb {
-        background: rgba(59, 130, 246, 0.25);
+        background: rgba(59, 130, 246, 0.3);
         border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.4);
-}
-
-/* ── Dark mode overrides ── */
-.dark body {
-    background: #0A0F1C;
-    color: #E8EAF0;
-}
-
-.dark ::selection {
-    background: rgba(59, 130, 246, 0.3);
-    color: #fff;
-}
-
-.dark ::-webkit-scrollbar-track {
-    background: #0A0F1C;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.3);
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
     background: rgba(59, 130, 246, 0.5);
 }
 

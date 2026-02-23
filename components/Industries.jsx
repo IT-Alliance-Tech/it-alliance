@@ -52,7 +52,7 @@ function MarqueeTrack({ direction = "left", speed = 30 }) {
 
 export default function Industries() {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-80px" });
+    const inView = useInView(ref, { once: true, amount: 0.15 });
 
     return (
         <Section id="industries" background="dark">

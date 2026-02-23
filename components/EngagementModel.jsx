@@ -136,8 +136,8 @@ export default function EngagementModel() {
 
                                 <div className={`relative rounded-2xl border-2 overflow-hidden transition-all duration-500
                                     ${isActive
-                                        ? `${phase.borderColor} bg-white dark:bg-white/[0.05] shadow-xl dark:shadow-none`
-                                        : "border-slate-200 dark:border-white/[0.05] bg-slate-50/80 dark:bg-white/[0.02] shadow-md dark:shadow-none"
+                                        ? `${phase.borderColor} bg-white dark:bg-white/[0.22] shadow-xl dark:shadow-none`
+                                        : "border-slate-200 dark:border-white/[0.05] bg-slate-50/80 dark:bg-white/[0.05] shadow-md dark:shadow-none"
                                     }`}
                                 >
                                     {/* Top gradient bar */}
@@ -173,7 +173,7 @@ export default function EngagementModel() {
                                                     className="flex items-start gap-3 text-[14px]"
                                                 >
                                                     <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${phase.color} mt-[5px] shrink-0`} />
-                                                    <span className="text-slate-600 dark:text-white/50">{item}</span>
+                                                    <span className="text-slate-600 dark:text-white/70">{item}</span>
                                                 </motion.li>
                                             ))}
                                         </ul>

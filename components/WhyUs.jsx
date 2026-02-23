@@ -45,7 +45,7 @@ const differentiators = [
 
 function Card({ diff, index }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const inView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <motion.div
@@ -138,7 +138,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative py-28 px-4 sm:px-8 bg-[#F8FAFC] dark:bg-[#08080e]"
+      className="relative py-14 md:py-20 px-4 sm:px-8 bg-[#F8FAFC] dark:bg-[#08080e]"
     >
       {/* Soft radial background — dark mode only */}
       <div
