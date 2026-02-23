@@ -24,7 +24,7 @@ const stats = [
 
 function AnimatedCounter({ value, duration = 2 }) {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-20px" });
+    const inView = useInView(ref, { once: true, amount: 0.3 });
     const motionValue = useMotionValue(0);
     const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
     const [displayValue, setDisplayValue] = useState(0);
@@ -76,7 +76,7 @@ export default function ExecutiveProblem() {
                         key={i}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.15 }}
                         transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
                         whileHover={{ y: -4 }}
                         className="rounded-2xl p-8 border border-slate-150 dark:border-white/[0.04] bg-white/50 dark:bg-white/[0.02] group cursor-default"
