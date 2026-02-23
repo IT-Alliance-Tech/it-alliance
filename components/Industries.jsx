@@ -6,11 +6,11 @@ import Section, { SectionLabel, SectionTitle, SectionDescription } from "./Secti
 import { Building2 } from "lucide-react";
 
 const industries = [
-    { name: "Real Estate & Property", icon: "🏠", color: "from-blue-500 to-indigo-500" },
-    { name: "Healthcare & Clinics", icon: "🏥", color: "from-teal-500 to-emerald-500" },
-    { name: "Education & Coaching", icon: "🎓", color: "from-violet-500 to-purple-500" },
-    { name: "Professional Service Firms", icon: "📊", color: "from-amber-500 to-orange-500" },
-    { name: "Scaling E-commerce Brands", icon: "🛍️", color: "from-rose-500 to-pink-500" },
+    { name: "Real Estate & Property", image: "/images/industries/real_estate.svg", color: "from-blue-500 to-indigo-500" },
+    { name: "Healthcare & Clinics", image: "/images/industries/healthcare.svg", color: "from-teal-500 to-emerald-500" },
+    { name: "Education & Coaching", image: "/images/industries/education.svg", color: "from-violet-500 to-purple-500" },
+    { name: "Professional Service Firms", image: "/images/industries/services.svg", color: "from-amber-500 to-orange-500" },
+    { name: "Scaling E-commerce Brands", image: "/images/industries/ecommerce.svg", color: "from-rose-500 to-pink-500" },
 ];
 
 // Triplicate for seamless infinite loop
@@ -22,22 +22,24 @@ function MarqueeTrack({ direction = "left", speed = 30 }) {
     return (
         <div className="flex overflow-hidden w-full">
             <motion.div
-                className="flex gap-4 shrink-0"
+                className="flex gap-6 shrink-0"
                 animate={{ x: direction === "left" ? ["0%", "-33.33%"] : ["-33.33%", "0%"] }}
                 transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
             >
                 {items.map((industry, i) => (
                     <div
                         key={i}
-                        className="group relative flex items-center gap-3 px-6 py-3.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.04] shrink-0 cursor-default hover:border-transparent transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md"
+                        className="group relative flex items-center gap-6 px-10 py-6 rounded-[2rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.04] shrink-0 cursor-default hover:border-transparent transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md"
                     >
                         {/* Gradient border glow on hover */}
                         <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${industry.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                             <div className="absolute inset-[1px] rounded-full bg-white dark:bg-[#0d1117]" />
                         </div>
 
-                        <span className="relative z-10 text-xl leading-none">{industry.icon}</span>
-                        <span className="relative z-10 text-[14px] font-medium text-slate-700 dark:text-white/80 whitespace-nowrap">
+                        <div className={`relative z-10 w-24 h-24 rounded-2xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 flex items-center justify-center p-2 group-hover:scale-110 transition-transform duration-300 shadow-sm overflow-hidden`}>
+                            <img src={industry.image} alt={industry.name} className="w-full h-full object-contain" />
+                        </div>
+                        <span className="relative z-10 text-lg font-bold text-slate-800 dark:text-white/95 whitespace-nowrap">
                             {industry.name}
                         </span>
 
@@ -65,7 +67,7 @@ export default function Industries() {
             </SectionDescription>
 
             {/* Two marquee rows */}
-            <div ref={ref} className="mt-16 flex flex-col gap-4 relative">
+            <div ref={ref} className="mt-20 flex flex-col gap-8 relative">
 
                 {/* Left & right fade masks */}
                 <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white dark:from-[#080c14] to-transparent z-10 pointer-events-none" />
@@ -77,7 +79,7 @@ export default function Industries() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                    <MarqueeTrack direction="left" speed={28} />
+                    <MarqueeTrack direction="left" speed={60} />
                 </motion.div>
 
                 {/* Row 2 — right */}
@@ -86,7 +88,7 @@ export default function Industries() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <MarqueeTrack direction="right" speed={22} />
+                    <MarqueeTrack direction="right" speed={55} />
                 </motion.div>
             </div>
 

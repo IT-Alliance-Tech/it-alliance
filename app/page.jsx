@@ -10,7 +10,7 @@ import WhyUs from "@/components/WhyUs";
 import Trust from "@/components/Trust";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import FloatingSocial from "@/components/FloatingSocial";
+import FloatingSocialNav from "@/components/FloatingSocialNav";
 
 export default function Home() {
     return (
@@ -27,7 +27,7 @@ export default function Home() {
             <Trust />
             <FinalCTA />
             <Footer />
-            <FloatingSocial />
+            <FloatingSocialNav />
         </main>
     );
 }
