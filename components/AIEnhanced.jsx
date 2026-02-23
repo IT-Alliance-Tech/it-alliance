@@ -46,7 +46,7 @@ const features = [
 
 export default function AIEnhanced() {
     const bottomRef = useRef(null);
-    const bottomInView = useInView(bottomRef, { once: true, margin: "-60px" });
+    const bottomInView = useInView(bottomRef, { once: true, amount: 0.15 });
 
     return (
         <Section id="ai-enhanced" background="dark">
@@ -69,7 +69,7 @@ export default function AIEnhanced() {
                 {features.map((item, i) => {
                     const Icon = item.icon;
                     const ref = useRef(null);
-                    const inView = useInView(ref, { once: true, margin: "-40px" });
+                    const inView = useInView(ref, { once: true, amount: 0.15 });
                     const [hovered, setHovered] = useState(false);
 
                     return (

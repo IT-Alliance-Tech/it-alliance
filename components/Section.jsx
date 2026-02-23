@@ -18,7 +18,7 @@ export default function Section({
     return (
         <section
             id={id}
-            className={`relative py-16 md:py-24 lg:py-32 ${bgClass} overflow-hidden ${className}`}
+            className={`relative py-10 md:py-16 lg:py-20 ${bgClass} overflow-hidden ${className}`}
         >
             <div className="absolute inset-0 bg-noise pointer-events-none opacity-20 dark:opacity-50" />
             <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
@@ -33,7 +33,7 @@ export function SectionLabel({ icon: Icon, text }) {
         <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3 mb-8"
         >
@@ -52,7 +52,7 @@ export function SectionTitle({ children, className = "" }) {
         <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className={`text-[32px] sm:text-[40px] lg:text-[52px] font-bold text-slate-900 dark:text-white leading-[1.08] tracking-[-0.02em] mb-6 ${className}`}
         >
@@ -66,9 +66,9 @@ export function SectionDescription({ children }) {
         <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-2xl mb-16"
+            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-2xl mb-10"
         >
             {children}
         </motion.p>
@@ -80,7 +80,7 @@ export function FadeInView({ children, className = "", delay = 0 }) {
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
                 duration: 0.8,
                 delay,
@@ -98,7 +98,7 @@ export function StaggerContainer({ children, className = "" }) {
         <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={{
                 hidden: {},
                 visible: {

@@ -25,7 +25,7 @@ export default function Trust() {
     return (
         <section
             id="trust"
-            className="relative py-32 overflow-hidden bg-[#EEF2F7] dark:bg-transparent"
+            className="relative py-16 md:py-20 overflow-hidden bg-[#EEF2F7] dark:bg-transparent"
             style={{
                 fontFamily: "'DM Sans', sans-serif",
             }}
@@ -73,7 +73,7 @@ export default function Trust() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.15 }}
                     transition={{ duration: 0.8 }}
                     className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20"
                 >
@@ -114,7 +114,7 @@ export default function Trust() {
                                     key={i}
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, amount: 0.2 }}
                                     transition={{ delay: i * 0.08, duration: 0.4 }}
                                     className="rounded-2xl px-5 py-4 border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.03] flex items-start gap-3"
                                 >
@@ -149,19 +149,19 @@ export default function Trust() {
                             return (
                                 <div
                                     key={i}
-                                    className="flex items-center gap-4 mx-4 px-7 py-4 rounded-2xl border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.025] cursor-default flex-shrink-0 shadow-sm dark:shadow-none"
-                                    style={{ minWidth: "210px" }}
+                                    className="flex items-center gap-5 mx-4 px-9 py-6 rounded-2xl border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.025] cursor-default flex-shrink-0 shadow-sm dark:shadow-none"
+                                    style={{ minWidth: "320px" }}
                                 >
                                     <div
-                                        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                                        className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
                                         style={{
                                             background: `${item.color}18`,
                                             border: `1px solid ${item.color}30`,
                                         }}
                                     >
-                                        <Icon size={16} strokeWidth={1.8} style={{ color: item.color }} />
+                                        <Icon size={26} strokeWidth={1.8} style={{ color: item.color }} />
                                     </div>
-                                    <span className="text-[13px] font-semibold text-slate-600 dark:text-white/60 whitespace-nowrap">
+                                    <span className="text-[16px] font-semibold text-slate-600 dark:text-white/60 whitespace-nowrap">
                                         {item.name}
                                     </span>
                                 </div>
@@ -174,7 +174,7 @@ export default function Trust() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.15 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="relative flex flex-col sm:flex-row items-center justify-between rounded-3xl border border-slate-200 dark:border-white/[0.06] overflow-hidden bg-white dark:bg-transparent"
                 >
