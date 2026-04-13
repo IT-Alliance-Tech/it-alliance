@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { FadeInView } from "./Section";
 import { ArrowRight, Sparkles, Shield, Clock, Users, Zap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import CalendlyButton from "./CalendlyButton";
 
 const trustBadges = [
     { icon: Shield, label: "NDA-Protected" },
@@ -72,12 +74,9 @@ export default function FinalCTA() {
                                     briefing to pilot your AI-driven revenue architecture.
                                 </p>
 
-                                {/* CTA Buttons */}
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-                                    <motion.a
-                                        href="mailto:strategy@itallianceai.com"
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                    <Link
+                                        href="/schedule-briefing"
                                         className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-electric to-violet text-white font-black px-8 py-4 rounded-lg shadow-glow-md hover:shadow-glow-lg transition-all duration-500 text-[14px] overflow-hidden"
                                     >
                                         <span className="relative z-10">Schedule Briefing</span>
@@ -85,7 +84,7 @@ export default function FinalCTA() {
                                         
                                         {/* Shimmer */}
                                         <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
-                                    </motion.a>
+                                    </Link>
 
                                     <a
                                         href="mailto:strategy@itallianceai.com"

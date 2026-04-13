@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import CalendlyButton from "./CalendlyButton";
 
 const navLinks = [
     { label: "Problem", href: "/#problem" },
@@ -11,6 +12,7 @@ const navLinks = [
     { label: "Industries", href: "/#industries" },
     { label: "Engagement", href: "/#engagement" },
     { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -59,13 +61,13 @@ export default function Navbar() {
                             </Link>
                         ))}
 
-                        <a
-                            href="#cta"
+                        <Link
+                            href="/schedule-briefing"
                             className="relative bg-gradient-to-r from-electric to-violet text-white text-[13px] font-semibold px-6 py-2.5 rounded-lg hover:shadow-glow-md transition-all duration-500 tracking-wide overflow-hidden group"
                         >
                             <span className="relative z-10">Schedule Briefing</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-violet to-electric opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="flex md:hidden items-center gap-3">
@@ -115,13 +117,13 @@ export default function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
-                            <a
-                                href="#cta"
+                            <Link
+                                href="/schedule-briefing"
                                 onClick={() => setMobileOpen(false)}
-                                className="bg-gradient-to-r from-electric to-violet text-white font-semibold px-8 py-3.5 rounded-lg mt-4 shadow-glow-sm"
+                                className="bg-gradient-to-r from-electric to-violet text-white font-semibold px-8 py-3.5 rounded-lg mt-4 shadow-glow-sm flex items-center justify-center"
                             >
                                 Schedule Briefing
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 )}

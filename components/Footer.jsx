@@ -35,6 +35,7 @@ export default function Footer() {
                                 { label: "Industries", href: "/#industries" },
                                 { label: "Engagement", href: "/#engagement" },
                                 { label: "Insights Blog", href: "/blog" },
+                                { label: "Privacy Policy", href: "/privacy" },
                             ].map((link) => (
                                 <Link
                                     key={link.href}
@@ -79,12 +80,6 @@ export default function Footer() {
                         reserved.
                     </p>
                     <div className="flex gap-7">
-                        <a
-                            href="#"
-                            className="text-[11px] text-slate-400 dark:text-navy-400 hover:text-electric transition-colors tracking-wide"
-                        >
-                            Privacy Policy
-                        </a>
                         <a
                             href="#"
                             className="text-[11px] text-slate-400 dark:text-navy-400 hover:text-electric transition-colors tracking-wide"
