@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 import { FadeInView } from "./Section";
-import { ArrowRight, Sparkles, Shield, Clock, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Clock, Users, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import CalendlyButton from "./CalendlyButton";
 
 const trustBadges = [
     { icon: Shield, label: "NDA-Protected" },
@@ -14,125 +17,97 @@ export default function FinalCTA() {
     return (
         <section
             id="cta"
-            className="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:bg-cta-gradient"
+            className="relative py-8 md:py-12 overflow-hidden bg-[#0A0F1C]"
         >
-            {/* Animated background glows */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-noise opacity-20 dark:opacity-40" />
-
-                {/* Primary glow */}
-                <motion.div
-                    animate={{ scale: [1, 1.25, 1], opacity: [0.12, 0.28, 0.12] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-blue-300/25 dark:bg-electric/15 blur-[140px]"
+            {/* Cinematic Background */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/sections/cta-bg.png"
+                    alt="Background Mesh"
+                    fill
+                    className="object-cover opacity-40 mix-blend-screen"
                 />
-
-                {/* Secondary glow */}
-                <motion.div
-                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.08, 0.18, 0.08] }}
-                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                    className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-violet-300/20 dark:bg-violet/10 blur-[120px]"
-                />
-
-                {/* Subtle grid lines */}
-                <div
-                    className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
-                    style={{
-                        backgroundImage:
-                            "linear-gradient(to right, #6366f1 1px, transparent 1px), linear-gradient(to bottom, #6366f1 1px, transparent 1px)",
-                        backgroundSize: "80px 80px",
-                    }}
-                />
-
-                {/* Top & bottom fade masks */}
-                <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-slate-50 dark:from-transparent to-transparent" />
-                <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-slate-100 dark:from-transparent to-transparent" />
+                
+                {/* Dynamic Glows */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-electric/20 rounded-full blur-[140px] animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-violet/10 rounded-full blur-[120px]" />
+                
+                {/* Overlay Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-transparent to-[#0A0F1C]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-transparent to-[#0A0F1C]" />
             </div>
 
             <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
                 <FadeInView>
-                    <div className="text-center max-w-2xl mx-auto">
+                    <div className="relative max-w-4xl mx-auto rounded-[2rem] p-px bg-gradient-to-b from-white/10 to-transparent">
+                        {/* Glass Container */}
+                        <div className="relative rounded-[2rem] bg-[#0D1224]/80 backdrop-blur-3xl p-6 md:p-10 overflow-hidden border border-white/5">
+                            
+                            {/* Decorative Corner */}
+                            <div className="absolute top-0 right-0 p-8 opacity-10">
+                                <Zap className="w-32 h-32 text-electric" />
+                            </div>
 
-                        {/* Eyebrow badge */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2 mb-8 border border-blue-100/60 dark:border-white/10 shadow-sm"
-                        >
-                            <Sparkles className="w-3.5 h-3.5 text-electric" />
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-electric/80">
-                                Begin Your Transformation
-                            </span>
-                        </motion.div>
-
-                        {/* Headline */}
-                        <h2 className="text-[32px] sm:text-[44px] lg:text-[58px] font-bold text-slate-900 dark:text-white leading-[1.06] tracking-[-0.03em] mb-7">
-                            Ready to Build Your
-                            <br />
-                            <span className="text-gradient">AI Revenue Architecture?</span>
-                        </h2>
-
-                        {/* Subtext */}
-                        <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.85] mb-12 max-w-xl mx-auto">
-                            Schedule a confidential executive briefing with our architecture
-                            team. No pitch decks. No demos. Just a strategic conversation
-                            about your revenue future.
-                        </p>
-
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-
-                            {/* Primary CTA — fixed padding, shimmer overlay */}
-                            <motion.a
-                                href="mailto:strategy@itallianceai.com"
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.97 }}
-                                transition={{ duration: 0.2 }}
-                                className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-electric to-violet text-white font-semibold px-10 py-[18px] rounded-xl shadow-glow-md hover:shadow-glow-lg transition-shadow duration-500 text-[15px] overflow-hidden leading-none"
-                            >
-                                {/* Shimmer sweep */}
-                                <span
-                                    aria-hidden
-                                    className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]"
-                                />
-
-                                {/* Hover colour flip */}
-                                <span
-                                    aria-hidden
-                                    className="absolute inset-0 bg-gradient-to-r from-violet to-electric opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                />
-
-                                <span className="relative z-10">Schedule Executive Briefing</span>
-                                <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                            </motion.a>
-
-                            {/* Secondary / email link */}
-                            <a
-                                href="mailto:strategy@itallianceai.com"
-                                className="inline-flex items-center gap-2.5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 font-medium px-10 py-[18px] rounded-xl hover:bg-white dark:hover:bg-white/5 hover:border-slate-300 dark:hover:border-white/20 hover:text-slate-900 dark:hover:text-white transition-all duration-300 text-[15px] leading-none shadow-sm"
-                            >
-                                strategy@itallianceai.com
-                            </a>
-                        </div>
-
-                        {/* Trust badges */}
-                        <div className="flex items-center justify-center gap-6 flex-wrap">
-                            {trustBadges.map(({ icon: Icon, label }) => (
-                                <div
-                                    key={label}
-                                    className="flex items-center gap-1.5 text-[12px] text-slate-400 dark:text-navy-400 tracking-wide"
+                            <div className="text-center relative z-10">
+                                {/* Eyebrow badge */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 mb-6 backdrop-blur-md shadow-glow-sm"
                                 >
-                                    <Icon className="w-3.5 h-3.5 opacity-60" />
-                                    {label}
-                                </div>
-                            ))}
-                        </div>
+                                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                                        Begin Your Transformation
+                                    </span>
+                                </motion.div>
 
-                        {/* Fine print */}
-                        <p className="text-[11px] text-slate-400 dark:text-navy-500 mt-6 tracking-wide">
-                            Enterprise inquiries only · Responses within 48 hours
-                        </p>
+                                {/* Headline */}
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
+                                    Ready to Build Your<br />
+                                    <span className="text-gradient">AI Revenue Engine?</span>
+                                </h2>
+
+                                {/* Subtext */}
+                                <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-10 max-w-xl mx-auto font-medium">
+                                    Step into the future of enterprise growth. Schedule a confidential executive 
+                                    briefing to pilot your AI-driven revenue architecture.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+                                    <Link
+                                        href="/schedule-briefing"
+                                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-electric to-violet text-white font-black px-8 py-4 rounded-lg shadow-glow-md hover:shadow-glow-lg transition-all duration-500 text-[14px] overflow-hidden"
+                                    >
+                                        <span className="relative z-10">Schedule Briefing</span>
+                                        <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                                        
+                                        {/* Shimmer */}
+                                        <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                                    </Link>
+
+                                    <a
+                                        href="mailto:strategy@itallianceai.com"
+                                        className="inline-flex items-center gap-2 border border-white/10 text-white/70 font-bold px-8 py-4 rounded-lg hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300 text-[14px]"
+                                    >
+                                        Inquire via Email
+                                    </a>
+                                </div>
+
+                                {/* Trust badges */}
+                                <div className="flex flex-wrap items-center justify-center gap-10 pt-8 border-t border-white/5">
+                                    {trustBadges.map(({ icon: Icon, label }) => (
+                                        <div
+                                            key={label}
+                                            className="flex items-center gap-2.5 text-[13px] font-bold text-slate-500 uppercase tracking-widest"
+                                        >
+                                            <Icon className="w-4 h-4 text-electric/60" />
+                                            {label}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </FadeInView>
             </div>

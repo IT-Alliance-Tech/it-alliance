@@ -2,13 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import CalendlyButton from "./CalendlyButton";
 
 const navLinks = [
-    { label: "Problem", href: "#problem" },
-    { label: "Architecture", href: "#architecture" },
-    { label: "Pillars", href: "#pillars" },
-    { label: "Industries", href: "#industries" },
-    { label: "Engagement", href: "#engagement" },
+    { label: "Problem", href: "/#problem" },
+    { label: "Architecture", href: "/#architecture" },
+    { label: "Pillars", href: "/#pillars" },
+    { label: "Industries", href: "/#industries" },
+    { label: "Engagement", href: "/#engagement" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -33,8 +37,8 @@ export default function Navbar() {
                     }`}
             >
                 <div className="max-w-[1280px] mx-auto px-6 sm:px-8 flex items-center justify-between h-[76px]">
-                    <a
-                        href="#"
+                    <Link
+                        href="/"
                         className="font-bold text-xl tracking-tight flex items-center gap-3 group"
                     >
                         <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-electric to-violet flex items-center justify-center text-white text-xs font-bold tracking-wider shadow-glow-sm group-hover:shadow-glow-md transition-shadow duration-500">
@@ -43,27 +47,27 @@ export default function Navbar() {
                         <span className="text-slate-900 dark:text-white">
                             IT <span className="text-gradient">Alliance</span>
                         </span>
-                    </a>
+                    </Link>
 
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.href}
                                 href={link.href}
                                 className="text-[13px] text-slate-500 dark:text-navy-200 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 font-medium tracking-wide relative group"
                             >
                                 {link.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-electric to-violet group-hover:w-full transition-all duration-300" />
-                            </a>
+                            </Link>
                         ))}
 
-                        <a
-                            href="#cta"
+                        <Link
+                            href="/schedule-briefing"
                             className="relative bg-gradient-to-r from-electric to-violet text-white text-[13px] font-semibold px-6 py-2.5 rounded-lg hover:shadow-glow-md transition-all duration-500 tracking-wide overflow-hidden group"
                         >
                             <span className="relative z-10">Schedule Briefing</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-violet to-electric opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="flex md:hidden items-center gap-3">
@@ -104,22 +108,22 @@ export default function Navbar() {
                     >
                         <div className="flex flex-col items-center justify-center gap-7 pt-20">
                             {navLinks.map((link) => (
-                                <a
+                                <Link
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileOpen(false)}
                                     className="text-lg text-slate-700 dark:text-white font-medium hover:text-electric transition-colors"
                                 >
                                     {link.label}
-                                </a>
+                                </Link>
                             ))}
-                            <a
-                                href="#cta"
+                            <Link
+                                href="/schedule-briefing"
                                 onClick={() => setMobileOpen(false)}
-                                className="bg-gradient-to-r from-electric to-violet text-white font-semibold px-8 py-3.5 rounded-lg mt-4 shadow-glow-sm"
+                                className="bg-gradient-to-r from-electric to-violet text-white font-semibold px-8 py-3.5 rounded-lg mt-4 shadow-glow-sm flex items-center justify-center"
                             >
                                 Schedule Briefing
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 )}
