@@ -36,6 +36,7 @@ export default function Footer() {
                                 { label: "Engagement", href: "/#engagement" },
                                 { label: "Insights Blog", href: "/blog" },
                                 { label: "Privacy Policy", href: "/privacy" },
+                                { label: "Terms & Conditions", href: "/terms" },
                             ].map((link) => (
                                 <Link
                                     key={link.href}
@@ -80,12 +81,12 @@ export default function Footer() {
                         reserved.
                     </p>
                     <div className="flex gap-7">
-                        <a
-                            href="#"
+                        <Link
+                            href="/terms"
                             className="text-[11px] text-slate-400 dark:text-navy-400 hover:text-electric transition-colors tracking-wide"
                         >
-                            Terms of Service
-                        </a>
+                            Terms &amp; Conditions
+                        </Link>
                     </div>
                 </div>
             </div>
