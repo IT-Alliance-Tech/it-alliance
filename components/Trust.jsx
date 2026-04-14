@@ -89,7 +89,7 @@ export default function Trust() {
                                 // trusted infrastructure
                             </p>
                         </div>
-                        <h2 className="text-[48px] sm:text-[64px] font-black text-slate-900 dark:text-white leading-[0.95] tracking-[-0.04em]">
+                        <h2 className="text-[24px] sm:text-[32px] lg:text-[38px] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-[-0.02em]">
                             Built for
                             <br />
                             <em

@@ -30,7 +30,7 @@ export default function BlogHeader() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight mb-6"
+                        className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-[-0.02em] mb-6"
                     >
                         Thinking Beyond the <span className="text-gradient">Ordinary</span>
                     </motion.h1>

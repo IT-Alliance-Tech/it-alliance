@@ -80,7 +80,7 @@ export default async function BlogPost({ params }) {
                                     <span className="text-[10px] font-bold uppercase tracking-wider text-white">{post.category}</span>
                                 </div>
 
-                                <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight">
+                                <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-[-0.02em]">
                                     {post.title.split(':').map((part, i) => (
                                         <span key={i} className={i === 1 ? "block text-gradient mt-1" : ""}>
                                             {part}{i === 0 && part.includes('?') ? '' : (i === 0 && post.title.includes(':') ? ':' : '')}
