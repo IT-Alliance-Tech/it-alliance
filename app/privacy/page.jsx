@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
                 <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-20 pointer-events-none" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-electric/10 to-transparent blur-3xl opacity-30 pointer-events-none" />
                 
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                     <motion.div 
                         {...fadeIn}
                         className="max-w-3xl"
@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
 
             {/* Content Section */}
             <section className="pb-32 relative">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                         {/* Summary / Introduction */}
                         <motion.div 

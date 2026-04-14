@@ -37,7 +37,7 @@ export default function FinalCTA() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-transparent to-[#0A0F1C]" />
             </div>
 
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                 <FadeInView>
                     <div className="relative max-w-4xl mx-auto rounded-[2rem] p-px bg-gradient-to-b from-white/10 to-transparent">
                         {/* Glass Container */}

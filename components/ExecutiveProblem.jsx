@@ -56,7 +56,7 @@ export default function ExecutiveProblem() {
             </SectionTitle>
 
             <FadeInView delay={0.2}>
-                <div className="max-w-3xl">
+                <div className="max-w-4xl">
                     <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-5">
                         The AI market is saturated with tools, pilots, and proofs-of-concept
                         — yet 87% of enterprise AI projects fail to reach production. The

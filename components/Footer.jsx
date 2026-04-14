@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="relative bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-white py-20 overflow-hidden">
             <div className="absolute inset-0 bg-noise opacity-15 dark:opacity-30 pointer-events-none" />
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-5">
@@ -30,11 +30,10 @@ export default function Footer() {
                         </h4>
                         <div className="flex flex-col gap-3">
                             {[
-                                { label: "Architecture", href: "/#architecture" },
-                                { label: "Strategic Pillars", href: "/#pillars" },
-                                { label: "Industries", href: "/#industries" },
-                                { label: "Engagement", href: "/#engagement" },
-                                { label: "Insights Blog", href: "/blog" },
+                                { label: "Home", href: "/" },
+                                { label: "Blog", href: "/blog" },
+                                { label: "Templates", href: "/websitebuilder" },
+                                { label: "Contact", href: "/contact" },
                                 { label: "Privacy Policy", href: "/privacy" },
                                 { label: "Terms & Conditions", href: "/terms" },
                             ].map((link) => (

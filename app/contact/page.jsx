@@ -88,7 +88,7 @@ export default function ContactPage() {
                 <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-electric/10 via-violet/5 to-transparent blur-[120px] opacity-30 pointer-events-none" />
 
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export default function ContactPage() {
 
             {/* Main Content */}
             <section className="pb-32 relative z-10">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
                         {/* Contact Form */}

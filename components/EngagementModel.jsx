@@ -113,7 +113,7 @@ export default function EngagementModel() {
 
                 {/* Cards stage */}
                 <div
-                    className="relative flex items-center justify-center w-full max-w-5xl overflow-hidden px-4"
+                    className="relative flex items-center justify-center w-full max-w-container overflow-hidden px-4"
                     style={{ height: isMobile ? "460px" : "420px" }}
                     onMouseEnter={() => !isMobile && setPaused(true)}
                     onMouseLeave={() => !isMobile && setPaused(false)}

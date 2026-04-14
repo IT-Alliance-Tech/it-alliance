@@ -48,7 +48,7 @@ export default {
                 sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
             },
             maxWidth: {
-                container: "1280px",
+                container: "1440px",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

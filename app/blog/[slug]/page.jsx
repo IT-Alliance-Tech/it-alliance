@@ -62,7 +62,7 @@ export default async function BlogPost({ params }) {
                     <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C] via-transparent to-[#0A0F1C]" />
                 </div>
 
-                <div className="container relative z-10 max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Text Content */}
                         <div className="order-2 lg:order-1 space-y-8">
@@ -132,7 +132,7 @@ export default async function BlogPost({ params }) {
 
             {/* Article Content with Sticky Elements */}
             <section className="pb-32 relative">
-                <div className="container max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="flex flex-col lg:flex-row gap-16">
                         
                         {/* Sidebar */}
