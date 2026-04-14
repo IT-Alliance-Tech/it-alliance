@@ -38,11 +38,11 @@ export default function ScheduleBriefingPage() {
                         </span>
                     </motion.div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                    <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-[-0.02em] mb-6">
                         Schedule Your <span className="text-gradient">Strategic Briefing</span>
                     </h1>
                     
-                    <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">
+                    <p className="text-base text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">
                         Select a time for a confidential architecture session. We'll discuss your revenue goals, 
                         current AI landscape, and how IT Alliance can accelerate your growth.
                     </p>

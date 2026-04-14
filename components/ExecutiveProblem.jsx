@@ -57,12 +57,12 @@ export default function ExecutiveProblem() {
 
             <FadeInView delay={0.2}>
                 <div className="max-w-3xl">
-                    <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-5">
+                    <p className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-5">
                         The AI market is saturated with tools, pilots, and proofs-of-concept
                         — yet 87% of enterprise AI projects fail to reach production. The
                         gap isn&apos;t technology. It&apos;s architecture.
                     </p>
-                    <p className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-14">
+                    <p className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.8] mb-14">
                         Without a revenue-aligned AI architecture, organizations accumulate
                         AI cost without capturing AI value. Departments run disconnected
                         experiments. Leadership sees dashboards, not decisions.

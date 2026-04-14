@@ -77,7 +77,7 @@ export default function StrategicPillars() {
                                     <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/[0.04] flex items-center justify-center">
                                         <Icon className={`w-5 h-5 ${pillar.iconColor}`} />
                                     </div>
-                                    <h3 className="text-[16px] font-semibold text-slate-900 dark:text-white tracking-tight">
+                                    <h3 className="text-[16px] sm:text-[18px] font-semibold text-slate-900 dark:text-white tracking-tight">
                                         {pillar.title}
                                     </h3>
                                 </div>
