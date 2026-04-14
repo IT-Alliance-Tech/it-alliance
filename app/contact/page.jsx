@@ -98,12 +98,12 @@ export default function ContactPage() {
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/20 text-electric text-[11px] font-bold uppercase tracking-widest mb-6">
                             Enterprise Inquiries
                         </div>
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.08] tracking-tight mb-6">
+                        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white leading-[1.08] tracking-[-0.02em] mb-6">
                             Let&apos;s Build{" "}
                             <span className="text-gradient">Something</span>{" "}
                             Extraordinary
                         </h1>
-                        <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
+                        <p className="text-slate-400 text-base leading-relaxed max-w-xl">
                             Ready to transform your business with enterprise AI? Reach out and our strategy team will get back to you within 48 hours.
                         </p>
                     </motion.div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                                 {!submitted ? (
                                     <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                                         <div>
-                                            <h2 className="text-2xl font-bold text-white mb-1">Send a Message</h2>
+                                            <h2 className="text-xl font-bold text-white mb-1">Send a Message</h2>
                                             <p className="text-slate-400 text-sm">Fill out the form and we&apos;ll be in touch shortly.</p>
                                         </div>
 
@@ -265,7 +265,7 @@ export default function ContactPage() {
                                         <div className="w-16 h-16 rounded-2xl bg-electric/10 border border-electric/20 flex items-center justify-center mb-6">
                                             <CheckCircle2 className="w-8 h-8 text-electric" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-3">Message Received!</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3">Message Received!</h3>
                                         <p className="text-slate-400 max-w-sm leading-relaxed">
                                             Thank you for reaching out. Our strategy team will respond within 48 hours.
                                         </p>
@@ -288,7 +288,7 @@ export default function ContactPage() {
                             className="lg:col-span-5 flex flex-col gap-6"
                         >
                             <div>
-                                <h2 className="text-xl font-bold text-white mb-2">Contact Information</h2>
+                                <h2 className="text-lg font-bold text-white mb-2">Contact Information</h2>
                                 <p className="text-slate-400 text-sm leading-relaxed">
                                     Reach us directly through any of these channels. We&apos;re here to help.
                                 </p>

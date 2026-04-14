@@ -99,7 +99,7 @@ function Card({ diff, index }) {
 
         {/* Title */}
         <h3
-          className="text-[18px] font-bold leading-tight text-slate-900 dark:text-[#f0f0f5]"
+          className="text-[16px] font-bold leading-tight text-slate-900 dark:text-[#f0f0f5]"
           style={{
             fontFamily: "'DM Serif Display', Georgia, serif",
             letterSpacing: "-0.01em",
@@ -173,13 +173,9 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-slate-900 dark:text-[#f0f0f5]"
+          className="text-[24px] sm:text-[32px] lg:text-[38px] text-slate-900 dark:text-[#f0f0f5] leading-[1.1] tracking-[-0.02em] mb-4"
           style={{
             fontFamily: "'DM Serif Display', Georgia, serif",
-            fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
-            lineHeight: 1.12,
-            letterSpacing: "-0.02em",
-            marginBottom: "1rem",
           }}
         >
           The Difference Is{" "}

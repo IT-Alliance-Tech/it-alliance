@@ -106,7 +106,7 @@ function AccordionItem({ section, index, isOpen, onToggle }) {
                     {/* Title + summary */}
                     <div className="flex-1 min-w-0">
                         <h3
-                            className={`font-semibold text-[17px] transition-colors duration-300 ${isOpen ? "text-white" : "text-white/70 group-hover:text-white/90"
+                            className={`font-semibold text-[15px] transition-colors duration-300 ${isOpen ? "text-white" : "text-white/70 group-hover:text-white/90"
                                 }`}
                         >
                             {section.title}
@@ -141,7 +141,7 @@ function AccordionItem({ section, index, isOpen, onToggle }) {
                         >
                             <div className="px-8 pb-8 pt-0">
                                 <div className="h-[1px] bg-gradient-to-r from-white/5 via-white/10 to-transparent mb-6" />
-                                <p className="text-[15px] text-white/60 leading-[1.85]">
+                                <p className="text-[13px] text-white/60 leading-[1.85]">
                                     {section.content}
                                 </p>
                             </div>
@@ -209,7 +209,7 @@ export default function TermsAndConditions() {
                             initial={{ opacity: 0, y: 24 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1 }}
-                            className="text-[52px] sm:text-[68px] font-bold leading-[1.05] tracking-[-0.03em] text-white mb-6"
+                            className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold leading-[1.08] tracking-[-0.02em] text-white mb-6"
                         >
                             Terms &amp;{" "}
                             <span className="text-gradient">Conditions</span>
@@ -240,7 +240,7 @@ export default function TermsAndConditions() {
                             { label: "Last Revised", value: "Apr 2025" },
                         ].map((s, i) => (
                             <div key={i} className="flex flex-col gap-1">
-                                <span className="text-[28px] font-bold text-white tracking-tight">
+                                <span className="text-[22px] font-bold text-white tracking-tight">
                                     {s.value}
                                 </span>
                                 <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/30">

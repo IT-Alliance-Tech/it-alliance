@@ -63,7 +63,7 @@ export default function FinalCTA() {
                                 </motion.div>
 
                                 {/* Headline */}
-                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
+                                <h2 className="text-[24px] sm:text-[32px] lg:text-[38px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-6">
                                     Ready to Build Your<br />
                                     <span className="text-gradient">AI Revenue Engine?</span>
                                 </h2>

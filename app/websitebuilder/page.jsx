@@ -118,7 +118,7 @@ export default function WebsiteTemplates() {
           <motion.h1
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-[68px] font-bold text-white tracking-[-0.03em] leading-[1.05] mb-5"
+            className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-white tracking-[-0.02em] leading-[1.08] mb-5"
           >
             Explore Our{" "}
             <span className="text-gradient">Website Templates</span>
@@ -127,7 +127,7 @@ export default function WebsiteTemplates() {
           <motion.p
             initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-white/45 text-[17px] max-w-xl mx-auto leading-relaxed mb-12"
+            className="text-white/45 text-[15px] max-w-xl mx-auto leading-relaxed mb-12"
           >
             Click any template on the left to preview it live. Ready to launch — just pick and deploy.
           </motion.p>

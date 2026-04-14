@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
             content: (
                 <div className="space-y-6">
                     <div>
-                        <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">1a. Personal Information</h4>
+                        <h4 className="text-base font-semibold text-slate-800 dark:text-white mb-3">1a. Personal Information</h4>
                         <p className="text-slate-600 dark:text-navy-200 leading-relaxed">
                             When you engage with IT Alliance AI as a partner, we may collect the following types of personal information:
                         </p>
@@ -30,13 +30,13 @@ export default function PrivacyPolicy() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">1b. Business Information</h4>
+                        <h4 className="text-base font-semibold text-slate-800 dark:text-white mb-3">1b. Business Information</h4>
                         <p className="text-slate-600 dark:text-navy-200 leading-relaxed">
                             We are an AI architecture and technology company that allows businesses to build their digital presence with professional solutions. Our comprehensive approach lets you create powerful digital solutions for yourself or your clients. IT Alliance was founded with a vision of simplifying the digital transformation journey for enterprises globally.
                         </p>
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">1.2 Non-Personal Information</h4>
+                        <h4 className="text-base font-semibold text-slate-800 dark:text-white mb-3">1.2 Non-Personal Information</h4>
                         <p className="text-slate-600 dark:text-navy-200 leading-relaxed">
                             We may also collect non-personal information, such as aggregated and anonymized data, for statistical and analytical purposes to improve our platform performance and user experience.
                         </p>
@@ -126,10 +126,10 @@ export default function PrivacyPolicy() {
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/20 text-electric text-[11px] font-bold uppercase tracking-widest mb-6">
                             Compliance & Trust
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+                        <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold tracking-[-0.02em] leading-[1.08] mb-6">
                             Privacy <span className="text-gradient">Policy</span>
                         </h1>
-                        <p className="text-slate-500 dark:text-navy-200 text-lg leading-relaxed mb-8">
+                        <p className="text-slate-500 dark:text-navy-200 text-base leading-relaxed mb-8">
                             Last Updated: April 13, 2024
                         </p>
                     </motion.div>
@@ -149,7 +149,7 @@ export default function PrivacyPolicy() {
                             className="lg:col-span-4"
                         >
                             <div className="sticky top-32">
-                                <h2 className="text-2xl font-bold mb-6">Introduction</h2>
+                                <h2 className="text-xl font-bold mb-6">Introduction</h2>
                                 <p className="text-slate-600 dark:text-navy-200 leading-relaxed italic border-l-2 border-electric pl-6">
                                     "Welcome to IT Alliance AI. Your privacy is paramount. This policy outlines how we protect and manage your data while driving your digital transformation."
                                 </p>
@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
                                         transition={{ duration: 0.5, delay: idx * 0.1 }}
                                         className="group"
                                     >
-                                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 group-hover:text-electric transition-colors duration-300">
+                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 group-hover:text-electric transition-colors duration-300">
                                             {section.title}
                                         </h3>
                                         <div className="prose prose-slate dark:prose-invert max-w-none">

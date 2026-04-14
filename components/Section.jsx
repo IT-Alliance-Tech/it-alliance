@@ -54,7 +54,7 @@ export function SectionTitle({ children, className = "" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className={`text-[32px] sm:text-[40px] lg:text-[52px] font-bold text-slate-900 dark:text-white leading-[1.08] tracking-[-0.02em] mb-6 ${className}`}
+            className={`text-[24px] sm:text-[32px] lg:text-[38px] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-[-0.02em] mb-6 ${className}`}
         >
             {children}
         </motion.h2>
@@ -68,7 +68,7 @@ export function SectionDescription({ children }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-2xl mb-10"
+            className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-2xl mb-10"
         >
             {children}
         </motion.p>

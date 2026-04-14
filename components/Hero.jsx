@@ -77,7 +77,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="text-[42px] sm:text-[56px] lg:text-[68px] font-bold text-slate-900 dark:text-white leading-[1.05] tracking-[-0.03em] mb-7"
+                            className="text-[32px] sm:text-[42px] lg:text-[52px] font-bold text-slate-900 dark:text-white leading-[1.08] tracking-[-0.02em] mb-7"
                         >
                             We Don&apos;t Sell AI.
                             <br />
@@ -90,7 +90,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="text-[17px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-lg mb-12"
+                            className="text-[15px] text-slate-500 dark:text-navy-200 leading-[1.8] max-w-lg mb-12"
                         >
                             IT Alliance AI builds AI-native revenue architectures that
                             transform how enterprises acquire, convert, and retain — at scale,
