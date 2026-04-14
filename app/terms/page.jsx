@@ -189,7 +189,7 @@ export default function TermsAndConditions() {
                     />
                 </div>
 
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                     <div className="max-w-2xl">
                         {/* Badge */}
                         <motion.div
@@ -257,7 +257,7 @@ export default function TermsAndConditions() {
                 {/* Subtle bottom glow */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-violet/5 blur-[100px] pointer-events-none" />
 
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 relative">
 
                         {/* ── Left sticky column ── */}

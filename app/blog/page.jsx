@@ -19,7 +19,7 @@ export default function BlogIndex() {
             <BlogHeader />
 
             <section className="pb-32">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {blogPosts.map((post, index) => (
                             <BlogCard key={post.id} post={post} index={index} />

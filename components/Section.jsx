@@ -21,7 +21,7 @@ export default function Section({
             className={`relative py-10 md:py-16 lg:py-20 ${bgClass} overflow-hidden ${className}`}
         >
             <div className="absolute inset-0 bg-noise pointer-events-none opacity-20 dark:opacity-50" />
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 relative z-10">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                 {children}
             </div>
         </section>

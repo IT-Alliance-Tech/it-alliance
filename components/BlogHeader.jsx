@@ -11,7 +11,7 @@ export default function BlogHeader() {
                 <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] bg-violet/10 rounded-full blur-[150px] opacity-20" />
             </div>
 
-            <div className="container relative z-10 max-w-[1280px] mx-auto px-6 sm:px-8">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
                 <div className="max-w-3xl">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}

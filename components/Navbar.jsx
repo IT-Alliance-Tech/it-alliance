@@ -6,11 +6,7 @@ import Link from "next/link";
 import CalendlyButton from "./CalendlyButton";
 
 const navLinks = [
-    { label: "Problem", href: "/#problem" },
-    { label: "Architecture", href: "/#architecture" },
-    { label: "Pillars", href: "/#pillars" },
-    { label: "Industries", href: "/#industries" },
-    { label: "Engagement", href: "/#engagement" },
+    { label: "Home", href: "/" },
     { label: "Blog", href: "/blog" },
     { label: "Templates", href: "/websitebuilder" },
     { label: "Contact", href: "/contact" },
@@ -37,7 +33,7 @@ export default function Navbar() {
                     : "bg-transparent"
                     }`}
             >
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-8 flex items-center justify-between h-[76px]">
+                <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between h-[76px]">
                     <Link
                         href="/"
                         className="font-bold text-xl tracking-tight flex items-center gap-3 group"

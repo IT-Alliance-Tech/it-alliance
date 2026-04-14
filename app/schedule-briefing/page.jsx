@@ -18,7 +18,7 @@ export default function ScheduleBriefingPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-electric/5 rounded-full blur-[120px] opacity-20" />
                 </div>
 
-                <div className="container relative z-10 max-w-[1280px] mx-auto px-6 sm:px-8 text-center">
+                <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
                     <Link 
                         href="/" 
                         className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-white transition-colors mb-12 group"

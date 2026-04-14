@@ -67,7 +67,7 @@ export default function Trust() {
             <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full border border-white/[0.03] pointer-events-none hidden dark:block" />
             <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full border border-white/[0.04] pointer-events-none hidden dark:block" />
 
-            <div className="relative max-w-6xl mx-auto px-6">
+            <div className="relative max-w-container mx-auto px-6">
 
                 {/* Header row */}
                 <motion.div

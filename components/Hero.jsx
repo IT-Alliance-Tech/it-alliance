@@ -58,7 +58,7 @@ export default function Hero() {
                 ))}
             </div>
 
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-8 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
+            <div className="max-w-[1440px] mx-auto px-6 lg:px-12 w-full pt-28 pb-20 md:pt-36 md:pb-28 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <motion.div

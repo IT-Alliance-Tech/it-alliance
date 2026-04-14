@@ -149,7 +149,7 @@ export default function WhyUs() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-container mx-auto">
         {/* Label */}
         <motion.div
           ref={headRef}
