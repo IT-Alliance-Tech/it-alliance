@@ -144,7 +144,7 @@ export default function WebsiteTemplates() {
               { label: "E-Commerce",      n: templates.filter(t => t.category === "ecommerce").length,    icon: "◈", grad: "from-violet/15 to-pink-400/10",   border: "border-violet/20"   },
             ].map((s, i) => (
               <div key={i}
-                className={`flex items-center gap-4 px-7 py-4 rounded-2xl bg-gradient-to-br ${s.grad} border ${s.border} backdrop-blur-sm`}
+                className={`flex items-center justify-center gap-4 px-7 py-4 w-[220px] rounded-2xl bg-gradient-to-br ${s.grad} border ${s.border} backdrop-blur-sm`}
               >
                 <span className="text-2xl text-white/20">{s.icon}</span>
                 <div className="text-left">
